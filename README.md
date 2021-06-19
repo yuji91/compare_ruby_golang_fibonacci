@@ -49,3 +49,24 @@ sys	0m0.008s
 
 ## 結果
 build済のファイルを実行すると1秒未満で完了した。
+
+## RubyからGolangを呼び出した場合の実行結果
+
+```
+# 事前準備
+$ go build -buildmode=c-shared -o fib_shared_library.so fib_shared_library.go 
+
+$ time ruby fib_attach_golang.rb
+
+102334155
+
+real	0m1.393s
+user	0m1.001s
+sys	0m0.161s
+
+2回目: 1.2s
+3回目: 1.0s
+```
+
+## 結果
+RubyからGolangでビルド済の関数を呼び出す形で実行すれば、15秒かかった処理が約1秒で完了した。
