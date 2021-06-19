@@ -5,7 +5,7 @@
 
 ## Rubyでの実行結果
 ```
-> time ruby fib.rb
+$ time ruby fib.rb
 102334155
 
 real	0m19.115s
@@ -31,3 +31,21 @@ sys	0m0.365s
 
 ## 結果
 Rubyで15秒かかる処理が2秒未満で完了した。
+
+## Golang(build済)の実行結果
+```
+$ go build fib.go
+time ./fib
+
+102334155
+
+real	0m0.776s
+user	0m0.761s
+sys	0m0.008s
+
+2回目: 0.7s
+3回目: 0.7s
+```
+
+## 結果
+build済のファイルを実行すると1秒未満で完了した。
